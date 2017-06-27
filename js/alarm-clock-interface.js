@@ -2,34 +2,28 @@ var Clock = require('./../js/alarm-clock.js').clockModule;
 
 
 $(document).ready(function(){
-
-
-
-  $('#time').text(moment().format('HH:mm'));
-
+  $('#time').text(moment().format('LTS'));
   setInterval(function() {
-    $('#time').text(moment().format('HH:mm'));
+    $('#time').text(moment().format('LTS'));
   }, 1000);
 
 
 
+  // alert("test");
 
-alert("test");
-
-var alarmClock = new Clock();
-var array = [];
+  var alarmClock = new Clock();
+  var array = [];
   $("form").submit(function(event) {
     event.preventDefault();
     var time = $("#alarmTime").val();
     array.push(time);
-    alert(array);
+    // alert(array);
   });
 
   setInterval(function() {
-    var timeOnPage = $('#time').html();
+    var military = [moment().format('HH:mm')];
     console.log(array);
-    alarmClock.alarm(timeOnPage, array[0]);
-
+    console.log(military);
+    alarmClock.alarm(military[0], array[0]);
   }, 1000);
-
 });
