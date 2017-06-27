@@ -1,10 +1,10 @@
 function Clock(name) {
   this.name = name;
 }
-Clock.prototype.alarm = function (times, alarmTime) {
+Clock.prototype.alarm = function(pageClock, alarmTime) {
 
-  if(times === alarmTime) {
-    alert("Beeeeeeep");
+  if(pageClock === alarmTime) {
+    alert("Beeeeeeep boooooop beeeeeeep");
   }
-};
-export.clockModule = Clock;
+}
+exports.clockModule = Clock;
